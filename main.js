@@ -1,18 +1,26 @@
 /*Ce premier projet a été spécialement conçu pour ceux qui débutent dans la programmation JavaScript et qui n'ont pas l'habitude de développer des algorithmes. Votre objectif sera à la fois simple et amusant : vous allez construire un générateur de citations ! Les citations seront construites aléatoirement en assemblant des morceaux de phrase.
 Etape 1 : des citations aléatoires
 Vous devez respecter les consignes suivantes :
-    Les citations sont générées aléatoirement une par une à chaque appel du programme JavaScript => OK
-    Chaque citation est la combinaison d'au moins 3 morceaux de phrases (à vous de préparer ces morceaux de phrase) => OK
-    A défaut d'être intelligible, la phrase doit être cohérente (pas de point d'exclamation au milieu d'une phrase) => OK
-Le programme peut simplement afficher le résultat dans la console JavaScript.. => OK
+    Les citations sont générées aléatoirement une par une à chaque appel du programme JavaScript 
+    Chaque citation est la combinaison d'au moins 3 morceaux de phrases (à vous de préparer ces morceaux de phrase) 
+    A défaut d'être intelligible, la phrase doit être cohérente (pas de point d'exclamation au milieu d'une phrase) 
+Le programme peut simplement afficher le résultat dans la console JavaScript.. 
 Etape 2 : des citations configurables
 Vous souhaitez maintenant aller plus loin et proposer les options suivantes :
-    Choisir le nombre de citations générées (de 1 à 5) => OK
-    Choisir entre 2 types de générateurs de citations (vous devrez donc avoir 2 ensembles de phrases) => OK
-    Une fois les citations générées, proposer de générer de nouvelles citations ou d'arrêter là le programme => OK
+    Choisir le nombre de citations générées (de 1 à 5) 
+    Choisir entre 2 types de générateurs de citations (vous devrez donc avoir 2 ensembles de phrases) 
+    Une fois les citations générées, proposer de générer de nouvelles citations ou d'arrêter là le programme 
 Adaptez le programme pour qu'il puisse offrir ces fonctionnalités. A vous de jouer ! */
 
 //création des constantes
+
+const input = document.getElementsById("item");
+const  submitButton = document.getElementsById("submit");
+
+const list = document.getElementById("list");
+const genererButton = document.getElementById("generer");
+const generateur = document.getElementById("generateur");
+
 const debut = [
     "Je suis un enfant trouvé, ",
     "Mais, jusqu’à huit ans, j’ai cru que, comme tous les autres enfants, ",
@@ -41,7 +49,7 @@ const milieu = [
     "habitants, mais à sa situation même dans une contrée peu fertile. Le sol  , ",
     "n’a pas de profondeur, et pour produire de bonnes récoltes il lui faudrait  , ",
     "des engrais ou des amendements qui manquent dans le pays. Aussi ne , ",
-    "rencontre-t-on (ou tout au moins ne rencontrait-on à l’époque dont je  ",
+    "rencontre-t-on (ou tout au moins ne rencontrait-on à l’époque dont je,  ",
     "parle) que peu de champs cultivés. , ",
     "C’est dans un repli de terrain, sur les bords d’un ruisseau qui va  , ",
     "perdre ses eaux rapides dans un des affluents de la Loire, que se dresse la  , "
@@ -124,7 +132,6 @@ function generate_citation(max, type) { // bonne pratique car fonction réutilis
     }
     return tab;
 }
-
 console.log("Bienvenue dans le générateur de citation, vous pouvez générer entre 1 et 5 citation(s) !");
 let proposition; // let proposition => 5 choix possibles, générer de 1 à 5 citations
 while (proposition !== "0") {
@@ -145,15 +152,3 @@ while (proposition !== "0") {
                 console.log("Voici la citation " + (i + 1) + " : ");
                 console.log(citation.decrire());
             }
-        } else { // si l'utilisateur choisit autre chose que 3 ou 4 constantes (chiffre autre que 3 ou 4, lettre,....)
-              console.log("Vous avez saisi un autre chiffre que 3 ou 4, le programme ne peut générer vo(s)tre citation(s) !");
-        };
-    }
-    if ((proposition > 5) || (proposition !== 'numbers')) { //si la proposition saisie par l'utilisateur est supérieur à 5 ou n'est pas un chiffre
-        console.log("Veuillez saisir un chiffre entre 1 et 5 pour générer des citations ou 0 pour quitter.");
-    }
-    if (proposition === 0) { // quitte le programme si la proposition saisie par l' utilisateur est 0
-        console.log("Au revoir !");
-        break;
-    }
-}
