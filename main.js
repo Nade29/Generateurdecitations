@@ -24,7 +24,7 @@ const generateur = document.getElementById("generateur");
 const debut = [
     "Je suis un enfant trouvé, ",
     "Mais, jusqu’à huit ans, j’ai cru que, comme tous les autres enfants, ",
-    "serrait si doucement dans ses bras en me berçant, que mes larmes , ",
+    "serrait si doucement dans ses bras en me berçant, que mes larmes, ",
     "s’arrêtaient de couler., ",
     "Jamais je ne me couchais dans mon lit sans qu’une femme vint , ",
     "m’embrasser, et, quand le vent de décembre collait la neige contre les , ",
@@ -55,22 +55,6 @@ const milieu = [
     "perdre ses eaux rapides dans un des affluents de la Loire, que se dresse la  , "
 ];
 
-const milieu2 = [
-    "maison où j’ai passé mes premières années. , ",
-    "Jusqu’à huit ans, je n’avais jamais vu d’homme dans cette maison ;  ,",
-    "cependant ma mère n’était pas veuve, mais son mari, qui était tailleur de  , ",
-    "pierre, comme un grand nombre d’autres ouvriers de la contrée, travaillait , ",
-    "à Paris, et il n’était pas revenu au pays depuis que j’étais en âge de voir ou  , ",
-    "de comprendre ce qui m’entourait. De temps en temps seulement, il , ",
-    "envoyait de ses nouvelles par un de ses camarades qui rentrait au village., ",
-    "« Mère Barberin, votre homme va bien ; il m’a chargé de vous dire que  , ",
-    "l’ouvrage marche fort, et de vous remettre l’argent que voilà ; voulez-vous  , ",
-    "compter ? » , ",
-    "Et c’était tout. Mère Barberin se contentait de ces nouvelles : son  , ",
-    "homme était en bonne santé ; l’ouvrage donnait ; il gagnait sa vie. , ",
-    "De ce que Barberin était resté si longtemps à Paris, il ne faut pas  , ",
-    "croire qu’il était en mauvaise amitié avec sa femme. La question de  , "
-];
 
 const fin = [
     "désaccord n’était pour rien dans cette absence.",
@@ -95,39 +79,29 @@ const fin = [
 // Création de la constante Citation avec 3 ou 4 constantes
 const Citation = {
 
-    init: function(randomDebut, randomMilieu, randomMilieu2, randomFin) {
+    init: function(randomDebut, randomMilieu, randomFin) {
         this.randomDebut = randomDebut;
         this.randomMilieu = randomMilieu;
-        this.randomFin = randomFin;
-        if (randomMilieu2) {
-            this.randomMilieu2 = randomMilieu2;
-        } // si 4 constiables
+        this.randomFin = randomFin; 
+    },
+
+    generate_random: function(max) {
+        return Math.floor((Math.random() * max) + 1);
     },
     // Renvoie la description de Citation avec 3 ou 4 constantes
     decrire: function() {
-        if (this.randomMilieu2) {
-            return (this.randomDebut + " " + this.randomMilieu + " " + this.randomMilieu2 + " " + this.randomFin); // si 4 const
-        } else
           return (this.randomDebut + " " + this.randomMilieu + " " + this.randomFin); // si 3 const
+
     }
 };
 
-// retourne un entier aléatoire entre 1 et max
-function generate_random(max) {
-    return Math.floor((Math.random() * max) + 1);
-}
-
 // génère 'max' citation3
 // retourne un tableau avec dans chaque case une citation unique
-function generate_citation(max, type) { // bonne pratique car fonction réutilisable
+function generate_citation(max) { // bonne pratique car fonction réutilisable
     const tab = [];
     for (let i = 0; i < max; i++) {
         const citation = Object.create(Citation); // creation de la citation
-        if (type == 3) { // si type =3 alors la citation aura cette forme
-            citation.init(debut[generate_random(13)], milieu[[generate_random(13)]], null, fin[[generate_random(13)]]);
-        } else if (type == 4) { // si type =4 alors la citation aura cette forme
-            citation.init(debut[generate_random(13)], milieu[[generate_random(13)]], milieu2[[generate_random(13)]], fin[[generate_random(13)]]);
-        }
+        citation.init(debut[generate_random(13)], milieu[[generate_random(13)]],fin[[generate_random(13)]]);
         tab[i] = citation; // incrémente le tableau
     }
     return tab;
