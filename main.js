@@ -14,8 +14,8 @@ Adaptez le programme pour qu'il puisse offrir ces fonctionnalités. A vous de jo
 
 //création des constantes
 
-const input = document.getElementsById("item");
-const  submitButton = document.getElementsById("submit");
+const input = document.getElementById("item");
+const  submitButton = document.getElementById("submit");
 
 const list = document.getElementById("list");
 const genererButton = document.getElementById("generer");
@@ -23,60 +23,61 @@ const generateur = document.getElementById("generateur");
 
 const debut = [
     "Je suis un enfant trouvé, ",
-    "Mais, jusqu’à huit ans, j’ai cru que, comme tous les autres enfants, ",
-    "serrait si doucement dans ses bras en me berçant, que mes larmes, ",
-    "s’arrêtaient de couler., ",
-    "Jamais je ne me couchais dans mon lit sans qu’une femme vint , ",
-    "m’embrasser, et, quand le vent de décembre collait la neige contre les , ",
-    "vitres blanchies, elle me prenait les pieds entre ses deux mains et elle , ",
-    "restait à me les réchauffer en me chantant une chanson, dont je retrouve , ",
-    "encore dans ma mémoire l’air et quelques paroles., ",
-    "Quand j’avais une querelle avec un de mes camarades, elle me faisait , ",
-    "conter mes chagrins, et presque toujours elle trouvait de bonnes paroles , ",
-    "pour me consoler ou me donner raison., ",
-    "Par tout cela et par bien d’autres choses encore, par la façon dont elle , ",
-    "me parlait, par la façon dont elle me regardait, par ses caresses, par la  ",
+    "Jusqu’à huit ans j’ai cru que comme tous les autres enfants, ",
+    "Serrait si doucement dans ses bras en me berçant que mes larmes, ",
+    "S’arrêtaient de couler, ",
+    "Jamais je ne me couchais dans mon lit sans qu’une femme vint, ",
+    "M’embrasser et quand le vent de décembre collait la neige contre les, ",
+    "Vitres blanchies elle me prenait les pieds entre ses deux mains et elle, ",
+    "Restait à me les réchauffer en me chantant une chanson dont je retrouve, ",
+    "Encore dans ma mémoire l’air et quelques paroles, ",
+    "Quand j’avais une querelle avec un de mes camarades elle me faisait, ",
+    "Conter mes chagrins et presque toujours elle trouvait de bonnes paroles, ",
+    "Pour me consoler ou me donner raison, ",
+    "Par tout cela et par bien d’autres choses encore par la façon dont elle, ",
+    "Me parlait par la façon dont elle me regardait par ses caresses par la  ",
 ];
 
 const milieu = [
-    "douceur qu’elle mettait dans ses gronderies, je croyais qu’elle était ma mère. , ",
-    "Voici comment j’appris qu’elle n’était que ma nourrice , ",
-    "Mon village, ou, pour parler plus justement, le village où j’ai été élevé,  ",
-    "car je n’ai pas eu de village à moi, pas de lieu de naissance, pas plus que je  , ",
-    "n’ai eu de père et de mère, le village enfin où j’ai passé mon enfance se  , ",
-    "nomme Chavanon ; c’est l’un des plus pauvres du centre de la France. , ",
-    "Cette pauvreté, il la doit non à l’apathie ou à la paresse de ses  , ",
-    "habitants, mais à sa situation même dans une contrée peu fertile. Le sol  , ",
-    "n’a pas de profondeur, et pour produire de bonnes récoltes il lui faudrait  , ",
-    "des engrais ou des amendements qui manquent dans le pays. Aussi ne , ",
-    "rencontre-t-on (ou tout au moins ne rencontrait-on à l’époque dont je,  ",
-    "parle) que peu de champs cultivés. , ",
-    "C’est dans un repli de terrain, sur les bords d’un ruisseau qui va  , ",
-    "perdre ses eaux rapides dans un des affluents de la Loire, que se dresse la  , "
+    "douceur qu’elle mettait dans ses gronderies je croyais qu’elle était ma mère, ",
+    "voici comment j’appris qu’elle n’était que ma nourrice, ",
+    "mon village ou pour parler plus justement le village où j’ai été élevé,  ",
+    "car je n’ai pas eu de village à moi pas de lieu de naissance pas plus que je, ",
+    "n’ai eu de père et de mère le village enfin où j’ai passé mon enfance se, ",
+    "nomme Chavanon c’est l’un des plus pauvres du centre de la France, ",
+    "cette pauvreté il la doit non à l’apathie ou à la paresse de ses, ",
+    "habitants mais à sa situation même dans une contrée peu fertile le sol, ",
+    "n’a pas de profondeur et pour produire de bonnes récoltes il lui faudrait, ",
+    "des engrais ou des amendements qui manquent dans le pays Aussi ne, ",
+    "rencontre-t-on ou tout au moins ne rencontrait-on à l’époque dont je,  ",
+    "parle que peu de champs cultivés, ",
+    "c’est dans un repli de terrain sur les bords d’un ruisseau qui va, ",
+    "perdre ses eaux rapides dans un des affluents de la Loire que se dresse la, "
 ];
 
 
 const fin = [
     "désaccord n’était pour rien dans cette absence.",
-    "Il demeurait à Paris parce que le travail l’y retenait ; voilà tout. Quand ",
-    "il serait vieux, il reviendrait vivre près de sa vieille femme, et avec l’argent ",
-    "qu’ils auraient amassé ils seraient à l’abri de la misère pour le temps où ",
-    "l’âge leur aurait enlevé la force et la santé." ,
-    "Un jour de novembre, comme le soir tombait, un homme, que je ne ",
-    "connaissais pas, s’arrêta devant notre barrière. J’étais sur le seuil de la ",
-    "maison occupé à casser une bourrée. Sans pousser la barrière, mais en ",
-    "levant sa tête par-dessus en me regardant, l’homme me demanda si ce ",
-    "n’était pas là que demeurait la mère Barberin.",
-    "Je lui dis d’entrer.",
-    "Au bruit de nos voix, mère Barberin accourut et, au moment où il ",
-    "franchissait notre seuil, elle se trouva face à face avec lui.",
-    "« J’apporte des nouvelles de Paris », dit-il.",
-  "C’étaient là des paroles bien simples et qui déjà plus d’une fois avaient frappé nos oreilles"
+    "il demeurait à Paris parce que le travail l’y retenait  voilà tout. ",
+    "quand il serait vieux il reviendrait vivre près de sa vieille femme et avec l’argent. ",
+    "qu’ils auraient amassé ils seraient à l’abri de la misère pour le temps. ",
+    "où l’âge leur aurait enlevé la force et la santé." ,
+    "un jour de novembre comme le soir tombait un homme.  ",
+    "que je ne connaissais pas s’arrêta devant notre barrière. ",
+    "j’étais sur le seuil de la maison occupé à casser une bourrée. ",
+    "levant sa tête par dessus en me regardant.  ",
+    "l’homme me demanda si cen’était pas là que demeurait la mère Barberin.",
+    "je lui dis d’entrer.",
+    "au bruit de nos voix mère Barberin accourut. ",
+    "franchissait notre seuil elle se trouva face à face avec lui.",
+    "j’apporte des nouvelles de Paris dit-il.",
+    "c’étaient là des paroles bien simples et qui déjà plus d’une fois avaient frappé nos oreilles. "
 ];
 
 //=======================================================================================//
 
 // Création de la constante Citation avec 3 ou 4 constantes
+console.log(debut.length);
 const Citation = {
 
     init: function(randomDebut, randomMilieu, randomFin) {
@@ -107,22 +108,5 @@ function generate_citation(max) { // bonne pratique car fonction réutilisable
     return tab;
 }
 console.log("Bienvenue dans le générateur de citation, vous pouvez générer entre 1 et 5 citation(s) !");
-let proposition; // let proposition => 5 choix possibles, générer de 1 à 5 citations
-while (proposition !== "0") {
-    console.log("1 : Générer 1 citation : ");
-    console.log("2 : Générer 2 citations : ");
-    console.log("3 : Générer 3 citations : ");
-    console.log("4 : Générer 4 citations : ");
-    console.log("5 : Générer 5 citations : ");
-    console.log("0 : Quitter");
-    const proposition = prompt("Choisissez une option : ");
 
-    if ((proposition >= 0) && (proposition <= 5)) { // proposition saisie par l' utilisateur est compris entre 1 et 5
-        const typeCitation = prompt("Saississez 3 pour une (des) citation(s) à 3 variables, 4 pour 4 variables :"); // choix du nombre de constiables
-        if (typeCitation == 3 || typeCitation == 4) { // 2 choix possibles : générer 1 ou plusieurs citations à 3 (saisir 3) ou 4 (saisir 4) constiables
-            const tableau_citation = generate_citation(proposition, typeCitation);
-            for (let i = 0; i < proposition; i++) {
-                const citation = tableau_citation[i];
-                console.log("Voici la citation " + (i + 1) + " : ");
-                console.log(citation.decrire());
-            }
+list.innerHTML = debut[4] + milieu[7] + fin[0];
