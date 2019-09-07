@@ -15,6 +15,9 @@ Adaptez le programme pour qu'il puisse offrir ces fonctionnalités. A vous de jo
 //création des constantes
 
 
+const  submitButton = document.getElementById("submit");
+
+
 
 const debut = [
     "Je suis un enfant trouvé, ",
@@ -71,30 +74,6 @@ const fin = [
 
 //=======================================================================================//
 
-// Création de la constante Citation avec 3 ou 4 constantes
-
-
-const Citation = {
-
-    init: function(randomDebut, randomMilieu, randomFin) {
-        this.randomDebut = randomDebut;
-        this.randomMilieu = randomMilieu;
-        this.randomFin = randomFin; 
-    },
-
-    generate_random: function(max) {
-        return Math.floor((Math.random() * max) + 1);
-    },
-    // Renvoie la description de Citation avec 3 ou 4 constantes
-    decrire: function() {
-          return (this.randomDebut + " " + this.randomMilieu + " " + this.randomFin); // si 3 const
-
-    console.log(debut.length);      
-    }
-};
-
-// génère 'max' citation3
-// retourne un tableau avec dans chaque case une citation unique
 
 const generateur = document.getElementById("generateur");
 
@@ -110,20 +89,20 @@ function generate_citation(max) { // bonne pratique car fonction réutilisable
     return tab;
 
 }
-console.log("Bienvenue dans le générateur de citation, vous pouvez générer entre 1 et 5 citation(s) !");
-
-//Création du bouton d'affichage des citations
 
 const genererButton = document.getElementById("generateCitation");
 
-  
-function generateCitation() {
+  function generateCitation() {
 
-    let test = debut[Math.floor(Math.random() * debut.length)] + milieu[Math.floor(Math.random() * milieu.length)] + fin[Math.floor(Math.random() * fin.length)];
+    let citation = debut[Math.floor(Math.random() * debut.length)] + milieu[Math.floor(Math.random() * milieu.length)] + fin[Math.floor(Math.random() * fin.length)];
 
-    document.getElementById("citation").innerHTML = test;
+    document.getElementById("citation").innerHTML = citation;
   }
   
   genererButton.onclick = generateCitation;
+
+//=======================================================================================//  
+
+
 
 
