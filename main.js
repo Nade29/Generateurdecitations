@@ -75,20 +75,6 @@ const fin = [
 //=======================================================================================//
 
 
-const generateur = document.getElementById("generateur");
-
-function generate_citation(max) { // bonne pratique car fonction réutilisable
-    const tab = [];
-    for (let i = 0; i < max; i++) {
-        const citation = Object.create(Citation); // creation de la citation
-        citation.init(debut[generate_random(13)], milieu[[generate_random(13)]],fin[[generate_random(13)]]);
-        tab[i] = citation; // incrémente le tableau  
-    }
-
-    
-    return tab;
-
-}
 
 const genererButton = document.getElementById("generateCitation");
 
@@ -102,7 +88,6 @@ const genererButton = document.getElementById("generateCitation");
   genererButton.onclick = generateCitation;
 
 //=======================================================================================//  
-
 
 
 
